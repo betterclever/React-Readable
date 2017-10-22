@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/react-router": "^4.0.15",
+    "@types/react-router-dom": "^4.0.8",
+    "axios": "^0.16.2",
+    "material-ui": "^1.0.0-beta.17",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts-ts": "2.8.0",
+    "redux-thunk": "^2.2.0",
+    "typescript-fsa": "^2.5.0",
+    "typescript-fsa-reducers": "^0.4.4",
+    "typescript-fsa-redux-thunk": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.4",
+    "@types/node": "^8.0.46",
+    "@types/react": "^16.0.15",
+    "@types/react-dom": "^16.0.2"
+  }
+}
