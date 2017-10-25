@@ -5,7 +5,6 @@ import Typography from "material-ui/Typography"
 import Paper from "material-ui/Paper"
 import {EditControls, RatingControls} from "./Controls"
 import './styles/ViewPost.css'
-import Comment from "./Comment"
 import CommentSection from "./CommentSection"
 
 class ViewPost extends React.Component<any, any> {
@@ -35,11 +34,11 @@ class ViewPost extends React.Component<any, any> {
                                     <Typography type='body2'>10 October, 2017</Typography>
                                 </div>
                                 <div className="flex-div-row">
-                                    <RatingControls/>
+                                    <RatingControls voteScore={5} upVote={()=> {}} downVote={()=> {}}/>
                                     <Typography style={{fontSize: 14, marginTop: 15}}><b> 15 comments </b></Typography>
                                 </div>
                             </div>
-                            <EditControls/>
+                            {/*<EditControls/>*/}
                         </div>
                         <Typography id='post-body' type='body2'>Long Description. Long Description. Long Description.
                             Long Description. Long Description.</Typography>

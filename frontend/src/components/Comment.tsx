@@ -15,10 +15,10 @@ class Comment extends React.Component {
                     </div>
                 </div>
                 <div className="flex-div-row">
-                    <RatingControls/>
+                    <RatingControls voteScore={5} upVote={()=> {}} downVote={()=> {}}/>
                 </div>
             </div>
-            <EditControls/>
+            {/*<EditControls/>*/}
         </div>
     }
 }

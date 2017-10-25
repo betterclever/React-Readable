@@ -1,6 +1,6 @@
 import {reducerWithInitialState} from "typescript-fsa-reducers"
 import {Post} from "../utils/model"
-import {getAllPostsAction} from "../actions/actions"
+import {deletePostAction, downVotePostAction, getAllPostsAction, upVotePostAction} from "../actions/actions"
 
 export interface PostState {
     posts: Post[],
@@ -26,5 +26,14 @@ const PostReducer = reducerWithInitialState(INITIAL_STATE)
             posts: payload.result
         }
     })
+    .casesWithAction([upVotePostAction.done, downVotePostAction.done], (state: PostState, action) => ({
+        ...state,
+        posts: state.posts.map((post) => post.id ===  action.payload.params ? action.payload.result : {...post})
+    }))
+    .caseWithAction(deletePostAction.done, (state, action) => ({
+        ...state,
+        posts: state.posts.map((post) => post.id === action.payload.params ? action.payload.result.data : {...post})
+    }))
+
 
 export default PostReducer

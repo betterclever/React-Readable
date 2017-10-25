@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './index.css';
-import ResponsiveDrawer from "./components/HomeScreen"
+import HomeScreen from "./components/HomeScreen"
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
 import createMuiTheme from "material-ui/styles/createMuiTheme"
 import {BrowserRouter} from "react-router-dom"
@@ -25,7 +25,7 @@ const store = Redux.createStore(
     )
 );
 
-api.getCategories().then((posts) => {
+api.upVotePost("8xf0y6ziyjabvozdd253nd").then((posts: any) => {
     console.log(posts)
 })
 
@@ -37,8 +37,8 @@ function App() {
             <MuiThemeProvider theme={theme}>
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path="/" component={ResponsiveDrawer}/>
-                        <Route exact path="/addNew" component={AddNewPost}/>
+                        <Route exact path="/" component={HomeScreen}/>
+                        <Route exact path="/addPost" component={AddNewPost}/>
                         <Route exact path="/post" component={ViewPost}/>
                     </Switch>
                 </BrowserRouter>

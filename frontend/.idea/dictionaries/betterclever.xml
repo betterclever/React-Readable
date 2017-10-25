@@ -2,6 +2,8 @@
   <dictionary name="betterclever">
     <words>
       <w>axios</w>
+      <w>downvote</w>
+      <w>upvote</w>
     </words>
   </dictionary>
 </component>

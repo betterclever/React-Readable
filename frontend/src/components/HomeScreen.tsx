@@ -1,19 +1,23 @@
 import * as React from 'react';
 import {CSSProperties} from 'react';
+import {
+    AppBar,
+    Avatar,
+    Button,
+    Divider,
+    Drawer,
+    Hidden,
+    IconButton,
+    ListItem,
+    ListItemText,
+    Toolbar,
+    Typography,
+} from "material-ui"
 import {Theme, withStyles} from 'material-ui/styles';
-import Drawer from 'material-ui/Drawer';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import Hidden from 'material-ui/Hidden';
-import Divider from 'material-ui/Divider';
-import MenuIcon from 'material-ui-icons/Menu'
-import PostItem from "./PostItem"
-import {connect} from "react-redux"
-import {getAllPostsWorker} from "../actions/thunk-actions"
-import {Dispatch} from "redux"
+import {Add, Home, Menu} from 'material-ui-icons'
 import CategoryList from "./CategoryList"
+import PostList from "./PostList"
+import {Link} from "react-router-dom"
 
 const drawerWidth = 240;
 
@@ -72,17 +76,12 @@ class HomeScreen extends React.Component <any, any> {
         mobileOpen: false,
     };
 
-    componentDidMount(): void {
-        this.props.fetchAllPosts()
-    }
-
     handleDrawerToggle = () => {
         this.setState({mobileOpen: !this.state.mobileOpen});
     };
 
     render() {
         console.log(this.props)
-        console.log(this.props.posts)
 
         const {classes, theme} = this.props;
 
@@ -90,8 +89,16 @@ class HomeScreen extends React.Component <any, any> {
             <div>
                 <div className={classes.drawerHeader}/>
                 <Divider/>
-                <CategoryList cat={[{path: 'd', name: 'fsf'}]}/>
+                <Link to="/">
+                    <ListItem button>
+                        <Avatar>
+                            <Home/>
+                        </Avatar>
+                        <ListItemText primary='Home' style={{textDecoration: 'none'}}/>
+                    </ListItem>
+                </Link>
                 <Divider/>
+                <CategoryList cat={[{path: 'd', name: 'fsf'}]}/>
             </div>
         );
 
@@ -106,10 +113,10 @@ class HomeScreen extends React.Component <any, any> {
                                 onClick={this.handleDrawerToggle}
                                 className={classes.navIconHide}
                             >
-                                <MenuIcon/>
+                                <Menu/>
                             </IconButton>
                             <Typography type="title" color="inherit" noWrap>
-                                Responsive drawer
+                                READABLE
                             </Typography>
                         </Toolbar>
                     </AppBar>
@@ -138,26 +145,20 @@ class HomeScreen extends React.Component <any, any> {
                         </Drawer>
                     </Hidden>
                     <main className={classes.content}>
-                        <div className="flex-div-row">
-                            <PostItem/>
-                            <PostItem/>
-                        </div>
+                        <PostList location={this.props.location}/>
                     </main>
+                </div>
+                <div style={{position: 'fixed', bottom: 20, right: 20}}>
+                    <Link to="/addPost">
+                        <Button fab color="accent" aria-label="Add New Post">
+                            <Add/>
+                        </Button>
+                    </Link>
                 </div>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state: any) => ({
-    posts: state.PostState ? state.PostState.posts : null,
-    isLoading: state.PostState ? state.PostState.isLoading : true
-})
 
-const mapDispatchToProps = (dispatch: Dispatch<any>) => {
-    return {
-        fetchAllPosts: () => getAllPostsWorker(dispatch, {})
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(HomeScreen))
+export default (withStyles(styles, {withTheme: true})(HomeScreen))

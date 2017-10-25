@@ -1,11 +1,13 @@
 import * as React from "react"
-import {CircularProgress, List} from "material-ui"
+import {CircularProgress, List, ListItem, ListItemText} from "material-ui"
 import {Link} from "react-router-dom"
-import Typography from "material-ui/Typography"
 import {Category} from "../utils/model"
 import {Dispatch} from "redux"
 import {getCategoriesWorker} from "../actions/thunk-actions"
 import {connect} from "react-redux"
+import * as qs from "querystring"
+import {Pages} from "material-ui-icons"
+import Avatar from "material-ui/Avatar"
 
 interface ICategoryListProps {
     categories: Array<Category>,
@@ -25,22 +27,22 @@ class CategoryList extends React.Component<ICategoryListProps, any> {
             <CircularProgress id="spinner"/> :
             <List>
                 <div/>
-                {console.log(this.props)}
-                {this.props.categories.map(category => {
-                    console.log(category)
-                    return <div key={category.name} style={{padding: 8}}>
-                        <Link to={`/${category.path}`}>
-                            <Typography>{category.name}</Typography>
-                        </Link>
-                    </div>
-                })}
+                {this.props.categories.map(category =>
+                    <Link key={category.name} to={{pathname: '/', search: qs.stringify({category: category.path})}}>
+                        <ListItem button>
+                            <Avatar>
+                                <Pages/>
+                            </Avatar>
+                            <ListItemText primary={category.name.toUpperCase()} style={{textDecoration: 'none'}}/>
+                        </ListItem>
+                    </Link>
+                )}
             </List>
     }
 
 }
 
 const mapStateToProps = (state: any) => {
-    console.log(state)
     return {
         categories: state.categories ? state.categories.categories : [],
         isLoading: state.categories ? state.categories.isFetching : true

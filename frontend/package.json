@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/query-string": "^5.0.1",
     "@types/react-redux": "^5.0.10",
     "@types/react-router": "^4.0.15",
     "@types/react-router-dom": "^4.0.8",
@@ -10,6 +11,7 @@
     "axios": "^0.16.2",
     "material-ui": "^1.0.0-beta.17",
     "material-ui-icons": "^1.0.0-beta.17",
+    "query-string": "^5.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",

@@ -18,8 +18,11 @@ export const addNewPost = (post: any) => axiosInstance.post('posts', post)
     .then((result) => result.data)
 
 export const getPostDetails = (id: string) => axiosInstance.get(`posts/${id}`)
-export const upVotePost = (id: string) => axiosInstance.post(`posts/${id}`, 'upVote')
-export const downVotePost = (id: string) => axiosInstance.post(`posts/${id}`, 'downVote')
+
+export const upVotePost = (id: string) => axiosInstance.post(`posts/${id}`, {option: "upVote"})
+    .then((result) => result.data)
+export const downVotePost = (id: string) => axiosInstance.post(`posts/${id}`, {option: "downVote"})
+    .then((result) => result.data)
 
 export const editPost = (post: any) => axiosInstance.put(`posts/${post.id}`, JSON.stringify({
     title: post.title,
