@@ -1,0 +1,14 @@
+#comment {
+    font-size: 20px;
+}
+
+#comment-div {
+    width: calc(100% - 10px);
+    border-bottom: 1px #474645 solid;
+    justify-content: space-between;
+}
+
+#comment-section {
+    width: calc(100% - 10px);
+    justify-content: space-between;
+}

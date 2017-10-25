@@ -1,0 +1,9 @@
+#post-main {
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+#post-body {
+    margin: 10px 20px;
+}

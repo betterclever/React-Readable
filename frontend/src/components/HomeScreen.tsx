@@ -4,13 +4,16 @@ import {Theme, withStyles} from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import List from 'material-ui/List';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
 import MenuIcon from 'material-ui-icons/Menu'
 import PostItem from "./PostItem"
+import {connect} from "react-redux"
+import {getAllPostsWorker} from "../actions/thunk-actions"
+import {Dispatch} from "redux"
+import CategoryList from "./CategoryList"
 
 const drawerWidth = 240;
 
@@ -63,26 +66,32 @@ const styles: Partial<CSSProperties> = (theme: Theme) => ({
     },
 });
 
-class ResponsiveDrawerLayout extends React.Component <any, any> {
+
+class HomeScreen extends React.Component <any, any> {
     state = {
         mobileOpen: false,
     };
+
+    componentDidMount(): void {
+        this.props.fetchAllPosts()
+    }
 
     handleDrawerToggle = () => {
         this.setState({mobileOpen: !this.state.mobileOpen});
     };
 
     render() {
+        console.log(this.props)
+        console.log(this.props.posts)
+
         const {classes, theme} = this.props;
 
         const drawer = (
             <div>
                 <div className={classes.drawerHeader}/>
                 <Divider/>
-                <List>
-                </List>
+                <CategoryList cat={[{path: 'd', name: 'fsf'}]}/>
                 <Divider/>
-                <List></List>
             </div>
         );
 
@@ -133,7 +142,6 @@ class ResponsiveDrawerLayout extends React.Component <any, any> {
                             <PostItem/>
                             <PostItem/>
                         </div>
-
                     </main>
                 </div>
             </div>
@@ -141,4 +149,15 @@ class ResponsiveDrawerLayout extends React.Component <any, any> {
     }
 }
 
-export default withStyles(styles, {withTheme: true})(ResponsiveDrawerLayout);
+const mapStateToProps = (state: any) => ({
+    posts: state.PostState ? state.PostState.posts : null,
+    isLoading: state.PostState ? state.PostState.isLoading : true
+})
+
+const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+    return {
+        fetchAllPosts: () => getAllPostsWorker(dispatch, {})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(HomeScreen))

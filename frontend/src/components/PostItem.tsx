@@ -1,6 +1,5 @@
 import * as React from "react"
 import Paper from "material-ui/Paper"
-//import Button from "material-ui/Button"
 import './styles/PostItem.css'
 import Typography from "material-ui/Typography"
 import IconButton from "material-ui/IconButton"
@@ -8,32 +7,8 @@ import ModeEditIcon from "material-ui-icons/ModeEdit"
 import DeleteIcon from "material-ui-icons/Delete"
 import ThumbUpIcon from "material-ui-icons/ThumbUp"
 import ThumbDownIcon from "material-ui-icons/ThumbDown"
+import {EditControls, RatingControls} from "./Controls"
 
-const EditControls = (props: any) => (
-    <div className="flex-div-column">
-        <IconButton color="accent" aria-label="Edit">
-            <ModeEditIcon/>
-        </IconButton>
-        <IconButton color="primary" aria-label="Add">
-            <DeleteIcon/>
-        </IconButton>
-    </div>
-)
-export const RatingControls = (props: any) => (
-    <div style={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        flexDirection: 'row',
-    }}>
-        <IconButton aria-label="Like">
-            <ThumbUpIcon/>
-        </IconButton>
-        <Typography type='subheading' style={{marginTop: '15px'}}>5</Typography>
-        <IconButton aria-label="Dislike">
-            <ThumbDownIcon/>
-        </IconButton>
-    </div>
-)
 
 class PostItem extends React.Component<any, any> {
 

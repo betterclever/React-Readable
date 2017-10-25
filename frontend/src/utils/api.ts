@@ -7,18 +7,25 @@ const axiosInstance = axios.create({
 })
 
 export const getAllPosts = (): Promise<any> => axiosInstance.get('posts')
+    .then((result) => result.data)
 
 export const getCategories = () => axiosInstance.get('categories')
+    .then((result) => result.data)
 export const getPostOfCategory = (category: any) => axiosInstance.get(`${category}/posts`)
+    .then((result) => result.data)
 
 export const addNewPost = (post: any) => axiosInstance.post('posts', post)
+    .then((result) => result.data)
+
 export const getPostDetails = (id: string) => axiosInstance.get(`posts/${id}`)
 export const upVotePost = (id: string) => axiosInstance.post(`posts/${id}`, 'upVote')
 export const downVotePost = (id: string) => axiosInstance.post(`posts/${id}`, 'downVote')
+
 export const editPost = (post: any) => axiosInstance.put(`posts/${post.id}`, JSON.stringify({
     title: post.title,
     body: post.body
 }))
+
 export const deletePost = (id: string) => axiosInstance.delete(`posts/${id}`)
 
 export const getPostComments = (id: string) => axiosInstance.get(`posts/${id}/comments`)

@@ -1,11 +1,9 @@
-import bindThunkAction from "typescript-fsa-redux-thunk"
-import {getAllPostsAction, getPostAction} from "./actions"
+import {getAllPostsAction, getCategoriesAction, getPostAction, getPostCommentsAction} from "./actions"
 import * as api from '../utils/api'
+import wrapAsyncWorker from "./wrapAsAsyncWorker"
 
-export const fetchAllPostsWorker = bindThunkAction(getAllPostsAction, async () => {
-    return await api.getAllPosts()
-})
+export const getPostWorker = wrapAsyncWorker(getPostAction, (id: string) => api.getPostDetails(id))
+export const getAllPostsWorker = wrapAsyncWorker(getAllPostsAction, (): Promise<any> => api.getAllPosts())
 
-export const fetchPostWorker = bindThunkAction(getPostAction, async (id) => {
-    return await api.getPostDetails(id)
-})
+export const getCategoriesWorker = wrapAsyncWorker(getCategoriesAction, () => api.getCategories())
+export const getPostCommentsWorker = wrapAsyncWorker(getPostCommentsAction, (id) => api.getPostComments(id))
