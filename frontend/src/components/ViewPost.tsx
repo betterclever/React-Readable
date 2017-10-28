@@ -92,7 +92,10 @@ class ViewPost extends React.Component<ViewPostProps, any> {
                             }}>
                                 <b>COMMENTS</b>
                             </Typography>
-                            <CommentSection parentID={post.id} comments={postComments} />
+                            <CommentSection
+                                refreshPost={() => this.props.fetchPost(post.id)}
+                                parentID={post.id}
+                                comments={postComments} />
                         </div>) :
                         (<div> No such post</div>)
                     }

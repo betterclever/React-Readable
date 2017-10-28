@@ -24,6 +24,7 @@ interface CommentSectionState {
 interface CommentSectionProps {
     parentID: string,
     comments: Comment[],
+    refreshPost: () => Promise<any>
     addComment: (comment: Partial<Comment>) => Promise<any>,
     editComment: (comment: any) => Promise<any>
 }
@@ -63,46 +64,49 @@ class CommentSection extends React.Component<CommentSectionProps, CommentSection
     render(): JSX.Element {
         return <div className="flex-div-column" id="comment-section">
             {(isUndefined(this.props.comments) || this.props.comments.length === 0) ?
-                (<div style={{margin: 20}}>No Comments Available</div>) :
+                (<div style={{ margin: 20 }}>No Comments Available</div>) :
                 this.props.comments
                     .filter((comment) => !comment.deleted)
                     .map((comment) =>
                         <CommentItem key={comment.id}
-                                     editComment={this.editComment}
-                                     comment={comment}/>)}
+                            editComment={this.editComment}
+                            comment={comment} />)}
             <div className="flex-div-column">
-                <TextField style={{marginBottom: '5px', width: '600px'}}
-                           label="Author"
-                           value={this.state.partialComment.author}
-                           onChange={event => this.setState({
-                               partialComment: {
-                                   ...this.state.partialComment,
-                                   author: event.target.value
-                               }
-                           })}/>
+                <TextField style={{ marginBottom: '5px', width: '600px' }}
+                    label="Author"
+                    value={this.state.partialComment.author}
+                    onChange={event => this.setState({
+                        partialComment: {
+                            ...this.state.partialComment,
+                            author: event.target.value
+                        }
+                    })} />
                 <TextField multiline
-                           style={{marginBottom: '15px', width: '600px'}}
-                           label="Comment"
-                           value={this.state.partialComment.body}
-                           onChange={event => this.setState({
-                               partialComment: {
-                                   ...this.state.partialComment,
-                                   body: event.target.value
-                               }
-                           })}/>
+                    style={{ marginBottom: '15px', width: '600px' }}
+                    label="Comment"
+                    value={this.state.partialComment.body}
+                    onChange={event => this.setState({
+                        partialComment: {
+                            ...this.state.partialComment,
+                            body: event.target.value
+                        }
+                    })} />
                 <Button raised color="primary"
-                        onClick={() => this.props.addComment({
-                            author: this.state.partialComment.author,
-                            body: this.state.partialComment.body,
-                            parentId: this.props.parentID,
-                            id: uuid.v4(),
-                            timestamp: Date.now()
-                        }).then(() => this.setState({
+                    onClick={() => this.props.addComment({
+                        author: this.state.partialComment.author,
+                        body: this.state.partialComment.body,
+                        parentId: this.props.parentID,
+                        id: uuid.v4(),
+                        timestamp: Date.now()
+                    }).then(() => {
+                        this.props.refreshPost()
+                        this.setState({
                             partialComment: {
                                 author: '',
                                 body: ''
                             }
-                        }))}>Comment</Button>
+                        })
+                    })}>Comment</Button>
             </div>
 
             <Dialog open={this.state.editDialogOpen} onRequestClose={this.handleRequestClose}>
@@ -131,9 +135,11 @@ class CommentSection extends React.Component<CommentSectionProps, CommentSection
                         id: this.state.editComment.id,
                         timestamp: Date.now(),
                         body: this.state.editComment.body
-                    }).then(() => this.setState({
-                        editDialogOpen: false
-                    }))} color="primary">
+                    }).then(() => {
+                        this.setState({
+                            editDialogOpen: false
+                        })
+                    })} color="primary">
                         Submit
                     </Button>
                 </DialogActions>

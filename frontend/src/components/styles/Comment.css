@@ -1,9 +1,9 @@
 #comment {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #comment-div {
-    width: calc(100% - 10px);
+    width: calc(100% - 20px);
     border-bottom: 1px #474645 solid;
     justify-content: space-between;
 }
