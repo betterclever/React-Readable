@@ -10,6 +10,27 @@ export interface Post {
     voteScore: number
 }
 
+export interface SubmitPost {
+    id: string,
+    timestamp: number,
+    title: string,
+    body: string,
+    author: string,
+    category: string,
+}
+
+export interface EditPostModel {
+    id: string,
+    title: string,
+    body: string
+}
+
+export interface EditCommentModel {
+    id: string,
+    body: string,
+    timestamp: number
+}
+
 export interface Category {
     name: string,
     path: string
@@ -24,4 +45,3 @@ export interface Comment {
     voteScore: number,
     deleted: number
 }
-

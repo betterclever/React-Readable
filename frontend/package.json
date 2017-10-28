@@ -8,6 +8,7 @@
     "@types/react-router": "^4.0.15",
     "@types/react-router-dom": "^4.0.8",
     "@types/redux": "^3.6.0",
+    "@types/uuid": "^3.4.3",
     "axios": "^0.16.2",
     "material-ui": "^1.0.0-beta.17",
     "material-ui-icons": "^1.0.0-beta.17",
@@ -22,7 +23,8 @@
     "redux-thunk": "^2.2.0",
     "typescript-fsa": "^2.5.0",
     "typescript-fsa-reducers": "^0.4.4",
-    "typescript-fsa-redux-thunk": "^1.0.0"
+    "typescript-fsa-redux-thunk": "^1.0.0",
+    "uuid": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",

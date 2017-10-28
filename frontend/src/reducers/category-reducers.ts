@@ -1,6 +1,6 @@
-import {reducerWithInitialState} from "typescript-fsa-reducers"
-import {Category} from "../utils/model"
-import {getCategoriesAction} from "../actions/actions"
+import { reducerWithInitialState } from 'typescript-fsa-reducers'
+import { Category } from '../utils/model'
+import { getCategoriesAction } from '../actions/actions'
 
 export interface CategoryState {
     categories: Category[],
@@ -13,14 +13,13 @@ const INITIAL_STATE: CategoryState = {
 }
 
 const CategoryReducer = reducerWithInitialState(INITIAL_STATE)
-    .caseWithAction(getCategoriesAction.started, (state, {}) => {
+    .caseWithAction(getCategoriesAction.started, (state, { }) => {
         return {
             ...state,
             isFetching: true
         }
     })
-    .caseWithAction(getCategoriesAction.done, (state, {payload}) => {
-        console.log(payload.result)
+    .caseWithAction(getCategoriesAction.done, (state, { payload }) => {
         return {
             ...state,
             isFetching: false,

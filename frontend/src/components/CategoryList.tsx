@@ -1,22 +1,22 @@
-import * as React from "react"
-import {CircularProgress, List, ListItem, ListItemText} from "material-ui"
-import {Link} from "react-router-dom"
-import {Category} from "../utils/model"
-import {Dispatch} from "redux"
-import {getCategoriesWorker} from "../actions/thunk-actions"
-import {connect} from "react-redux"
-import * as qs from "querystring"
-import {Pages} from "material-ui-icons"
-import Avatar from "material-ui/Avatar"
+import * as React from 'react'
+import { CircularProgress, List, ListItem, ListItemText } from 'material-ui'
+import { Link } from 'react-router-dom'
+import { Category } from '../utils/model'
+import { Dispatch } from 'redux'
+import { getCategoriesWorker } from '../actions/thunk-actions'
+import { connect } from 'react-redux'
+import * as qs from 'querystring'
+import { Bookmark } from 'material-ui-icons'
+import Avatar from 'material-ui/Avatar'
 
-interface ICategoryListProps {
+interface CategoryListProps {
     categories: Array<Category>,
     cat: Array<Category>
     isLoading: boolean,
     fetchCategories: () => Promise<any>
 }
 
-class CategoryList extends React.Component<ICategoryListProps, any> {
+class CategoryList extends React.Component<CategoryListProps, any> {
 
     componentDidMount(): void {
         this.props.fetchCategories()
@@ -24,16 +24,18 @@ class CategoryList extends React.Component<ICategoryListProps, any> {
 
     render(): JSX.Element {
         return (this.props.isLoading) ?
-            <CircularProgress id="spinner"/> :
+            <CircularProgress id="spinner" /> :
             <List>
-                <div/>
+                <div />
                 {this.props.categories.map(category =>
-                    <Link key={category.name} to={{pathname: '/', search: qs.stringify({category: category.path})}}>
+                    <Link key={category.name}
+                        style={{textDecoration: 'none'}}
+                        to={{ pathname: '/', search: qs.stringify({ category: category.path }) }}>
                         <ListItem button>
                             <Avatar>
-                                <Pages/>
+                                <Bookmark />
                             </Avatar>
-                            <ListItemText primary={category.name.toUpperCase()} style={{textDecoration: 'none'}}/>
+                            <ListItemText primary={category.name.toUpperCase()} style={{ textDecoration: 'none' }} />
                         </ListItem>
                     </Link>
                 )}
@@ -49,11 +51,10 @@ const mapStateToProps = (state: any) => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+const mapDispatchToProps = (dispatch: Dispatch<{}>) => {
     return {
         fetchCategories: () => getCategoriesWorker(dispatch, {})
     }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryList)

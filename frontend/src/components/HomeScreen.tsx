@@ -1,5 +1,5 @@
-import * as React from 'react';
-import {CSSProperties} from 'react';
+import * as React from 'react'
+import { CSSProperties } from 'react'
 import {
     AppBar,
     Avatar,
@@ -12,14 +12,14 @@ import {
     ListItemText,
     Toolbar,
     Typography,
-} from "material-ui"
-import {Theme, withStyles} from 'material-ui/styles';
-import {Add, Home, Menu} from 'material-ui-icons'
-import CategoryList from "./CategoryList"
-import PostList from "./PostList"
-import {Link} from "react-router-dom"
+} from 'material-ui'
+import { Theme, withStyles } from 'material-ui/styles'
+import { Add, Home, Menu } from 'material-ui-icons'
+import CategoryList from './CategoryList'
+import PostList from './PostList'
+import { Link } from 'react-router-dom'
 
-const drawerWidth = 240;
+const drawerWidth = 240
 
 const styles: Partial<CSSProperties> = (theme: Theme) => ({
     root: {
@@ -62,45 +62,43 @@ const styles: Partial<CSSProperties> = (theme: Theme) => ({
         width: '100%',
         padding: theme.spacing.unit * 3,
         height: 'calc(100% - 56px)',
+        minHeight: 700,
         marginTop: 56,
         [theme.breakpoints.up('sm')]: {
             height: 'calc(100% - 64px)',
             marginTop: 64,
         },
     },
-});
+})
 
-
-class HomeScreen extends React.Component <any, any> {
+class HomeScreen extends React.Component<any, any> {
     state = {
         mobileOpen: false,
-    };
+    }
 
     handleDrawerToggle = () => {
-        this.setState({mobileOpen: !this.state.mobileOpen});
-    };
+        this.setState({ mobileOpen: !this.state.mobileOpen })
+    }
 
     render() {
-        console.log(this.props)
-
-        const {classes, theme} = this.props;
+        const { classes, theme } = this.props
 
         const drawer = (
             <div>
-                <div className={classes.drawerHeader}/>
-                <Divider/>
-                <Link to="/">
+                <div className={classes.drawerHeader} />
+                <Divider />
+                <Link to="/" style={{ textDecoration: 'none' }}>
                     <ListItem button>
                         <Avatar>
-                            <Home/>
+                            <Home />
                         </Avatar>
-                        <ListItemText primary='Home' style={{textDecoration: 'none'}}/>
+                        <ListItemText primary="Home" />
                     </ListItem>
                 </Link>
-                <Divider/>
-                <CategoryList cat={[{path: 'd', name: 'fsf'}]}/>
+                <Divider />
+                <CategoryList cat={[{ path: 'd', name: 'fsf' }]} />
             </div>
-        );
+        )
 
         return (
             <div className={classes.root}>
@@ -113,7 +111,7 @@ class HomeScreen extends React.Component <any, any> {
                                 onClick={this.handleDrawerToggle}
                                 className={classes.navIconHide}
                             >
-                                <Menu/>
+                                <Menu />
                             </IconButton>
                             <Typography type="title" color="inherit" noWrap>
                                 READABLE
@@ -145,20 +143,19 @@ class HomeScreen extends React.Component <any, any> {
                         </Drawer>
                     </Hidden>
                     <main className={classes.content}>
-                        <PostList location={this.props.location}/>
+                        <PostList history={this.props.history} location={this.props.location} />
                     </main>
                 </div>
-                <div style={{position: 'fixed', bottom: 20, right: 20}}>
+                <div style={{ position: 'fixed', bottom: 20, right: 20 }}>
                     <Link to="/addPost">
                         <Button fab color="accent" aria-label="Add New Post">
-                            <Add/>
+                            <Add />
                         </Button>
                     </Link>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-
-export default (withStyles(styles, {withTheme: true})(HomeScreen))
+export default (withStyles(styles, { withTheme: true })(HomeScreen))
