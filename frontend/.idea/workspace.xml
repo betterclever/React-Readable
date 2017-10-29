@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d77f85f4-381c-46e4-a90c-3b0299621805" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/styles/AddNewPost.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/Comment.tsx" afterPath="$PROJECT_DIR$/src/components/CommentItem.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../api-server/comments.js" afterPath="$PROJECT_DIR$/../api-server/comments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../api-server/posts.js" afterPath="$PROJECT_DIR$/../api-server/posts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/actions.ts" afterPath="$PROJECT_DIR$/src/actions/actions.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/thunk-actions.ts" afterPath="$PROJECT_DIR$/src/actions/thunk-actions.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/wrapAsAsyncWorker.ts" afterPath="$PROJECT_DIR$/src/actions/wrapAsAsyncWorker.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddNewPost.tsx" afterPath="$PROJECT_DIR$/src/components/AddNewPost.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CategoryList.tsx" afterPath="$PROJECT_DIR$/src/components/CategoryList.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CommentSection.tsx" afterPath="$PROJECT_DIR$/src/components/CommentSection.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Controls.tsx" afterPath="$PROJECT_DIR$/src/components/Controls.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/EditPost.tsx" afterPath="$PROJECT_DIR$/src/components/EditPost.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HomeScreen.tsx" afterPath="$PROJECT_DIR$/src/components/HomeScreen.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PostItem.tsx" afterPath="$PROJECT_DIR$/src/components/PostItem.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PostList.tsx" afterPath="$PROJECT_DIR$/src/components/PostList.tsx" />
+    <list default="true" id="d77f85f4-381c-46e4-a90c-3b0299621805" name="Default" comment="Made required changes.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ViewPost.tsx" afterPath="$PROJECT_DIR$/src/components/ViewPost.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.tsx" afterPath="$PROJECT_DIR$/src/index.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/category-reducers.ts" afterPath="$PROJECT_DIR$/src/reducers/category-reducers.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/comment-reducers.ts" afterPath="$PROJECT_DIR$/src/reducers/comment-reducers.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.ts" afterPath="$PROJECT_DIR$/src/reducers/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/post-reducers.ts" afterPath="$PROJECT_DIR$/src/reducers/post-reducers.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/api.ts" afterPath="$PROJECT_DIR$/src/utils/api.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/model.ts" afterPath="$PROJECT_DIR$/src/utils/model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tslint.json" afterPath="$PROJECT_DIR$/tslint.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,7 +26,7 @@
       <file leaf-file-name="CommentItem.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CommentItem.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
+            <state relative-caret-position="620">
               <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -63,8 +38,8 @@
       <file leaf-file-name="AddNewPost.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddNewPost.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+            <state relative-caret-position="4030">
+              <caret line="153" column="5" lean-forward="false" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -72,12 +47,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            <state relative-caret-position="558">
+              <caret line="45" column="19" lean-forward="false" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryList.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/CategoryList.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="743">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewPost.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/ViewPost.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,6 +134,7 @@
       <find>push</find>
       <find>JSON</find>
       <find>uuid</find>
+      <find>delete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,18 +182,18 @@
         <option value="$PROJECT_DIR$/src/components/Controls.tsx" />
         <option value="$PROJECT_DIR$/src/components/PostList.tsx" />
         <option value="$PROJECT_DIR$/src/components/HomeScreen.tsx" />
-        <option value="$PROJECT_DIR$/src/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/EditPost.tsx" />
         <option value="$PROJECT_DIR$/src/actions/actions.ts" />
         <option value="$PROJECT_DIR$/src/actions/thunk-actions.ts" />
         <option value="$PROJECT_DIR$/src/components/CommentItem.tsx" />
         <option value="$PROJECT_DIR$/src/components/CommentSection.tsx" />
         <option value="$PROJECT_DIR$/src/components/PostItem.tsx" />
-        <option value="$PROJECT_DIR$/src/components/ViewPost.tsx" />
         <option value="$PROJECT_DIR$/src/utils/api.ts" />
         <option value="$PROJECT_DIR$/src/reducers/comment-reducers.ts" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/components/AddNewPost.tsx" />
+        <option value="$PROJECT_DIR$/src/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/ViewPost.tsx" />
       </list>
     </option>
   </component>
@@ -232,6 +230,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,7 +279,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,6 +342,9 @@
       <workItem from="1509167273548" duration="8034000" />
       <workItem from="1509179336908" duration="5046000" />
       <workItem from="1509188861269" duration="187000" />
+      <workItem from="1509198015101" duration="599000" />
+      <workItem from="1509222510287" duration="70000" />
+      <workItem from="1509310243146" duration="1270000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Frontend.">
       <created>1508678966763</created>
@@ -370,7 +371,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139223000" />
+    <option name="totallyTimeSpent" value="141162000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,10 +384,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5021075" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -396,7 +399,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -436,7 +438,8 @@
     <MESSAGE value="Initial Frontend." />
     <MESSAGE value="Category Fetch successful" />
     <MESSAGE value="show posts section complete (almost :P )" />
-    <option name="LAST_COMMIT_MESSAGE" value="show posts section complete (almost :P )" />
+    <MESSAGE value="Made required changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made required changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -445,13 +448,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/material-ui/styles/createMuiTheme.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/styles/PostItem.css.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/material-ui/Grid/Grid.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -476,20 +472,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/dist/components/AddNewPost.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/dist/components/AddNewPost.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-213">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -565,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CategoryList.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/category-reducers.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -583,7 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -634,7 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="107" column="2" lean-forward="false" selection-start-line="107" selection-start-column="2" selection-end-line="107" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,9 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -684,20 +667,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ViewPost.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CommentSection.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3875">
           <caret line="134" column="45" lean-forward="false" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
-          <folding>
-            <marker date="1509188790775" expanded="true" signature="7:23" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -705,9 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding>
-            <marker date="1509188766183" expanded="true" signature="7:23" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -715,12 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
           <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <marker date="1509188126126" expanded="true" signature="7:23" ph="..." />
-            <marker date="1509188126126" expanded="true" signature="3233:3312" ph="{...}" />
-            <marker date="1509188126126" expanded="true" signature="3245:3310" ph="{...}" />
-            <marker date="1509188126126" expanded="true" signature="3371:3504" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,9 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1023">
           <caret line="33" column="73" lean-forward="false" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="73" />
-          <folding>
-            <marker date="1509188605622" expanded="true" signature="62:135" ph="{&quot;baseURL&quot;: 'http://localhost:3001'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -746,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
           <caret line="37" column="80" lean-forward="false" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="80" />
-          <folding>
-            <marker date="1509188507746" expanded="true" signature="7:311" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -772,7 +730,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CommentItem.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
+        <state relative-caret-position="620">
           <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
@@ -806,19 +764,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AddNewPost.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+        <state relative-caret-position="4030">
+          <caret line="153" column="5" lean-forward="false" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/index.tsx</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/src/components/AddNewPost.tsx</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/EditPost.tsx</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/HomeScreen.tsx</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/material-ui/styles/MuiThemeProvider.d.ts</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/ViewPost.tsx</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/material-ui/styles/createMuiTheme.d.ts</node>
+            <node x="" y="">$PROJECT_DIR$/src/index.css</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/@types/react/index.d.ts</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/redux-thunk/index.d.ts</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/redux/index.d.ts</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/@types/react-redux/index.d.ts#Provider#12896;</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/@types/react-router/index.d.ts#Route#2515;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/node_modules/@types/react-router/index.d.ts#Switch#2984;</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/@types/react-dom/index.d.ts</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/material-ui/colors/index.d.ts</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/@types/react-router-dom/index.d.ts#BrowserRouter#806;</node>
+            <node x="" y="">$PROJECT_DIR$/src/reducers/index.ts</node>
+            <node x="" y="">$PROJECT_DIR$/src/index.tsx#AddNewPost#332;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#BrowserRouter#240;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#Colors#654;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#EditPost#609;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#HomeScreen#59;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#MuiThemeProvider#108;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#Provider#502;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#React#7;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#ReactDOM#539;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#Redux#426;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#Route#289;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#Switch#296;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#ViewPost#381;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#createMuiTheme#175;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#index.css#31;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#rootReducer#457;C:/Users/betterclever/WebstormProjects/reactnd-project-readable-starter/frontend/src/index.tsx#thunk#577;</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7829614604462475" x="521.0" y="403.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CategoryList.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="558">
+          <caret line="45" column="19" lean-forward="false" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ViewPost.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -18,10 +18,6 @@ import {
 } from '../actions/thunk-actions'
 import { isUndefined } from 'util'
 
-interface ViewPostState {
-    activePost: Post,
-}
-
 interface ViewPostProps extends RouteComponentProps<any> {
     comments: { [id: string]: Comment[]; },
     posts: Post[],
@@ -49,7 +45,7 @@ class ViewPost extends React.Component<ViewPostProps, any> {
         const post = this.props.posts[postID]
         const postComments = this.props.comments[postID]
 
-        return <div style={{ width: 'auto' }}>
+        return <div style={{width: 'auto'}}>
             <AppBar position="static" color="primary">
                 <Toolbar>
                     <Typography type="title" color="inherit">
@@ -58,13 +54,13 @@ class ViewPost extends React.Component<ViewPostProps, any> {
                 </Toolbar>
             </AppBar>
             <div className="flex-div-center-align">
-                <Paper style={{ height: 'auto', width: 700, margin: 20 }}>
-                    {!isUndefined(post) ?
+                <Paper style={{height: 'auto', width: 700, margin: 20}}>
+                    {(!isUndefined(post) && !(isUndefined(post.deleted)) && !post.deleted) ?
                         (<div className="flex-div-column">
                             <div className="flex-div-row" id="post-main">
                                 <div className="flex-div-column">
-                                    <div style={{ marginLeft: 10, minWidth: 240 }}>
-                                        <Typography type="headline" color="primary" style={{ paddingBottom: 10 }}>
+                                    <div style={{marginLeft: 10, minWidth: 240}}>
+                                        <Typography type="headline" color="primary" style={{paddingBottom: 10}}>
                                             {post.title}
                                         </Typography>
                                         <Typography type="body2">Written by <b>{post.author}</b></Typography>
@@ -73,9 +69,9 @@ class ViewPost extends React.Component<ViewPostProps, any> {
                                     </div>
                                     <div className="flex-div-row">
                                         <RatingControls voteScore={post.voteScore}
-                                            upVote={() => this.props.upVotePost(post.id)}
-                                            downVote={() => this.props.downVotePost(postID)} />
-                                        <Typography style={{ fontSize: 14, marginTop: 15 }}>
+                                                        upVote={() => this.props.upVotePost(post.id)}
+                                                        downVote={() => this.props.downVotePost(postID)}/>
+                                        <Typography style={{fontSize: 14, marginTop: 15}}>
                                             <b> {post.commentCount} comments </b>
                                         </Typography>
                                     </div>
@@ -83,7 +79,7 @@ class ViewPost extends React.Component<ViewPostProps, any> {
                                 <EditControls deleteIt={() => {
                                     this.props.deletePost(post.id).then(() => this.props.history.push('/'))
                                 }} editIt={() =>
-                                    this.props.history.push(`/edit/${post.id}`)} />
+                                    this.props.history.push(`/edit/${post.id}`)}/>
                             </div>
                             <Typography id="post-body" type="body2">{post.body}</Typography>
                             <Typography style={{
@@ -95,9 +91,9 @@ class ViewPost extends React.Component<ViewPostProps, any> {
                             <CommentSection
                                 refreshPost={() => this.props.fetchPost(post.id)}
                                 parentID={post.id}
-                                comments={postComments} />
+                                comments={postComments}/>
                         </div>) :
-                        (<div> No such post</div>)
+                        (<div style={{margin: 20}}> No such post</div>)
                     }
                 </Paper>
             </div>
