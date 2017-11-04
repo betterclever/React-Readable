@@ -11,7 +11,6 @@ import Avatar from 'material-ui/Avatar'
 
 interface CategoryListProps {
     categories: Array<Category>,
-    cat: Array<Category>
     isLoading: boolean,
     fetchCategories: () => Promise<any>
 }

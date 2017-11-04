@@ -13,6 +13,7 @@ import { editPostWorker, getPostWorker } from '../actions/thunk-actions'
 import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
+import { SideDrawer } from "./SideDrawer"
 
 interface EditPostState {
     partialPost: {
@@ -45,13 +46,14 @@ class EditPost extends React.Component<EditPostProps, EditPostState> {
     render(): JSX.Element {
         const pp = this.state.partialPost
         return <div style={{ width: 'auto' }}>
-            <AppBar position="static" color="primary">
+            <AppBar position="static" color="primary" style={{marginLeft: 170}}>
                 <Toolbar>
                     <Typography type="title" color="inherit">
                         Edit Post
                     </Typography>
                 </Toolbar>
             </AppBar>
+            <SideDrawer/>
             <div className="flex-div-center-align">
                 <Paper style={{ height: 'auto', width: 500, margin: 20 }}>
                     <div className="flex-div-column">

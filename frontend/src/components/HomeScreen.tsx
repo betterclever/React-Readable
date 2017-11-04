@@ -77,26 +77,24 @@ class HomeScreen extends React.Component<any, any> {
     }
 
     handleDrawerToggle = () => {
-        this.setState({ mobileOpen: !this.state.mobileOpen })
+        this.setState({mobileOpen: !this.state.mobileOpen})
     }
 
     render() {
-        const { classes, theme } = this.props
+        const {classes, theme} = this.props
 
         const drawer = (
             <div>
-                <div className={classes.drawerHeader} />
-                <Divider />
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/" style={{textDecoration: 'none'}}>
                     <ListItem button>
                         <Avatar>
-                            <Home />
+                            <Home/>
                         </Avatar>
-                        <ListItemText primary="Home" />
+                        <ListItemText primary="Home"/>
                     </ListItem>
                 </Link>
-                <Divider />
-                <CategoryList cat={[{ path: 'd', name: 'fsf' }]} />
+                <Divider/>
+                <CategoryList/>
             </div>
         )
 
@@ -109,9 +107,8 @@ class HomeScreen extends React.Component<any, any> {
                                 color="contrast"
                                 aria-label="open drawer"
                                 onClick={this.handleDrawerToggle}
-                                className={classes.navIconHide}
-                            >
-                                <Menu />
+                                className={classes.navIconHide}>
+                                <Menu/>
                             </IconButton>
                             <Typography type="title" color="inherit" noWrap>
                                 READABLE
@@ -142,14 +139,15 @@ class HomeScreen extends React.Component<any, any> {
                             {drawer}
                         </Drawer>
                     </Hidden>
+
                     <main className={classes.content}>
-                        <PostList history={this.props.history} location={this.props.location} />
+                        <PostList history={this.props.history} location={this.props.location}/>
                     </main>
                 </div>
-                <div style={{ position: 'fixed', bottom: 20, right: 20 }}>
+                <div style={{position: 'fixed', bottom: 20, right: 20}}>
                     <Link to="/addPost">
                         <Button fab color="accent" aria-label="Add New Post">
-                            <Add />
+                            <Add/>
                         </Button>
                     </Link>
                 </div>
@@ -158,4 +156,4 @@ class HomeScreen extends React.Component<any, any> {
     }
 }
 
-export default (withStyles(styles, { withTheme: true })(HomeScreen))
+export default (withStyles(styles, {withTheme: true})(HomeScreen))

@@ -17,6 +17,7 @@ import {
     upVotePostWorker
 } from '../actions/thunk-actions'
 import { isUndefined } from 'util'
+import { SideDrawer } from "./SideDrawer"
 
 interface ViewPostProps extends RouteComponentProps<any> {
     comments: { [id: string]: Comment[]; },
@@ -34,6 +35,7 @@ class ViewPost extends React.Component<ViewPostProps, any> {
         super(props)
     }
 
+
     componentDidMount(): void {
         const postID = this.props.match.params.id
         this.props.fetchPost(postID)
@@ -41,18 +43,20 @@ class ViewPost extends React.Component<ViewPostProps, any> {
     }
 
     render(): JSX.Element {
+
         const postID = this.props.match.params.id
         const post = this.props.posts[postID]
         const postComments = this.props.comments[postID]
 
         return <div style={{width: 'auto'}}>
-            <AppBar position="static" color="primary">
+            <AppBar position="static" color="primary" style={{marginLeft: 170}}>
                 <Toolbar>
                     <Typography type="title" color="inherit">
                         Readable
                     </Typography>
                 </Toolbar>
             </AppBar>
+            <SideDrawer/>
             <div className="flex-div-center-align">
                 <Paper style={{height: 'auto', width: 700, margin: 20}}>
                     {(!isUndefined(post) && !(isUndefined(post.deleted)) && !post.deleted) ?

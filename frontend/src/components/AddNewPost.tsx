@@ -22,6 +22,7 @@ import { addPostWorker, getCategoriesWorker } from '../actions/thunk-actions'
 import { connect } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
 import * as uuid from 'uuid'
+import { SideDrawer } from "./SideDrawer"
 
 interface AddNewPostState {
     partialPost: {
@@ -64,92 +65,93 @@ export class AddNewPost extends React.Component<AddNewPostProps, AddNewPostState
     }
 
     render(): JSX.Element {
-        return (<div style={{ width: 'auto' }}>
-            <AppBar position="static" color="primary">
-                <Toolbar>
-                    <Typography type="title" color="inherit">
-                        Add New Post
+        return (<div style={{width: 'auto'}}>
+                <AppBar position="static" color="primary" style={{marginLeft: 170}}>
+                    <Toolbar>
+                        <Typography type="title" color="inherit">
+                            Add New Post
                         </Typography>
-                </Toolbar>
-            </AppBar>
-            <div className="flex-div-center-align">
-                <Paper style={{ height: 'auto', width: 500, margin: 20 }}>
-                    <div className="flex-div-column">
-                        <TextField
-                            className="input-field"
-                            label="Title"
-                            style={{ margin: 10 }}
-                            onChange={
-                                (event) => this.setState({
-                                    partialPost: {
-                                        ...this.state.partialPost,
-                                        title: event.target.value
-                                    }
+                    </Toolbar>
+                </AppBar>
+                <SideDrawer/>
+                <div className="flex-div-center-align">
+                    <Paper style={{height: 'auto', width: 500, margin: 20}}>
+                        <div className="flex-div-column">
+                            <TextField
+                                className="input-field"
+                                label="Title"
+                                style={{margin: 10}}
+                                onChange={
+                                    (event) => this.setState({
+                                        partialPost: {
+                                            ...this.state.partialPost,
+                                            title: event.target.value
+                                        }
+                                    })
+                                }/>
+                            <TextField
+                                className="input-field"
+                                label="Body"
+                                multiline
+                                style={{margin: 10}}
+                                onChange={
+                                    (event) => this.setState({
+                                        partialPost: {
+                                            ...this.state.partialPost,
+                                            body: event.target.value
+                                        }
+                                    })
+                                }/>
+                            <TextField
+                                className="input-field"
+                                label="Author"
+                                style={{margin: 10}}
+                                onChange={
+                                    (event) => this.setState({
+                                        partialPost: {
+                                            ...this.state.partialPost,
+                                            author: event.target.value
+                                        }
+                                    })
+                                }/>
+                            <FormControl style={{margin: 10, width: '200px'}}>
+                                <InputLabel htmlFor="age-simple">Category</InputLabel>
+                                <Select value={this.state.partialPost.category}
+                                        input={<Input id="age-simple"/>}
+                                        onChange={(event) => this.setState({
+                                            partialPost: {
+                                                ...this.state.partialPost,
+                                                category: event.target.value
+                                            }
+                                        })}>
+                                    {this.props.categories.map((category) =>
+                                        <MenuItem key={category.name} value={category.name}>{category.name}</MenuItem>)}
+                                </Select>
+                            </FormControl>
+                        </div>
+                    </Paper>
+                </div>
+                <div style={{position: 'fixed', bottom: 20, right: 20}}>
+                    <Button fab
+                            color="accent"
+                            aria-label="add"
+                            onClick={() => {
+                                const partialPost = this.state.partialPost
+                                this.props.addPost({
+                                    id: uuid.v4(),
+                                    title: partialPost.title,
+                                    body: partialPost.body,
+                                    author: partialPost.author,
+                                    timestamp: Date.now(),
+                                    category: partialPost.category
+                                }).then(() => {
+                                    this.props.history.push('/')
                                 })
-                            } />
-                        <TextField
-                            className="input-field"
-                            label="Body"
-                            multiline
-                            style={{ margin: 10 }}
-                            onChange={
-                                (event) => this.setState({
-                                    partialPost: {
-                                        ...this.state.partialPost,
-                                        body: event.target.value
-                                    }
-                                })
-                            } />
-                        <TextField
-                            className="input-field"
-                            label="Author"
-                            style={{margin: 10}}
-                            onChange={
-                                (event) => this.setState({
-                                    partialPost: {
-                                        ...this.state.partialPost,
-                                        author: event.target.value
-                                    }
-                                })
-                            } />
-                        <FormControl style={{ margin: 10, width: '200px' }}>
-                            <InputLabel htmlFor="age-simple">Category</InputLabel>
-                            <Select value={this.state.partialPost.category}
-                                input={<Input id="age-simple" />}
-                                onChange={(event) => this.setState({
-                                    partialPost: {
-                                        ...this.state.partialPost,
-                                        category: event.target.value
-                                    }
-                                })}>
-                                {this.props.categories.map((category) =>
-                                    <MenuItem key={category.name} value={category.name}>{category.name}</MenuItem>)}
-                            </Select>
-                        </FormControl>
-                    </div>
-                </Paper>
+                            }}>
+                        <DoneIcon/>
+                    </Button>
+                </div>
             </div>
-            <div style={{ position: 'fixed', bottom: 20, right: 20 }}>
-                <Button fab
-                    color="accent"
-                    aria-label="add"
-                    onClick={() => {
-                        const partialPost = this.state.partialPost
-                        this.props.addPost({
-                            id: uuid.v4(),
-                            title: partialPost.title,
-                            body: partialPost.body,
-                            author: partialPost.author,
-                            timestamp: Date.now(),
-                            category: partialPost.category
-                        }).then(() => {
-                            this.props.history.push('/')
-                        })
-                    }}>
-                    <DoneIcon />
-                </Button>
-            </div>
-        </div>
         )
     }
 }
